@@ -1,4 +1,4 @@
-from peewee import *
+import sqlite3
 import os
 from os.path import expanduser
 import omegacn7500
@@ -8,31 +8,33 @@ import time
 
 db_dir = expanduser("~/.brewer/db/")
 db_file = "exchange.db"
-db = SqliteDatabase(db_dir + db_file)
+
+db = sqlite3.connect(db_dir + db_file)
+
 omega = omegacn7500.OmegaCN7500(settings.port, settings.rimsAddress)
 
 
 # Models
-class Info(Model):
-    pv = DecimalField()
-    sv = DecimalField()
-    pid_running = BooleanField()
-    hltToMash = BooleanField()
-    hlt = BooleanField()
-    rimsToMash = BooleanField()
-    pump = BooleanField()
-    timestamp = DecimalField()
+# class Info(Model):
+#     pv = DecimalField()
+#     sv = DecimalField()
+#     pid_running = BooleanField()
+#     hltToMash = BooleanField()
+#     hlt = BooleanField()
+#     rimsToMash = BooleanField()
+#     pump = BooleanField()
+#     timestamp = DecimalField()
 
-    class Meta:
-        database = db
+#     class Meta:
+#         database = db
 
-class Request(Model):
-    method = CharField()
-    args = CharField()
-    timestamp = DecimalField()
+# class Request(Model):
+#     method = CharField()
+#     args = CharField()
+#     timestamp = DecimalField()
 
-    class Meta:
-        database = db
+#     class Meta:
+#         database = db
 
 
 
@@ -40,7 +42,6 @@ class Request(Model):
 def connect():
     create_brewer_dir()
     create_db_dir()
-    db.connect()
     return db
 
 def create_brewer_dir():
@@ -51,6 +52,29 @@ def create_brewer_dir():
 def create_db_dir():
     if not os.path.exists(db_dir):
         os.makedirs(db_dir)
+
+def create_info_table():
+    db.execute("""create table if not exists info
+        (
+            pv REAL NOT NULL,
+            sv REAL NOT NULL,
+            pid_running INTEGER NOT NULL,
+            hltToMash INTEGER NOT NULL,
+            hlt INTEGER NOT NULL,
+            rimsToMash INTEGER NOT NULL,
+            pump INTEGER NOT NULL,
+            timestamp REAL NOT NULL
+        );
+    """)
+
+def create_request_table():
+    db.execute("""create table if not exists request
+        (
+            method TEXT,
+            args TEXT,
+            timestamp REAL NOT NULL
+        );
+    """)
 
 def delete_db():
     if os.path.isfile(db_dir + db_file):
@@ -67,31 +91,35 @@ def recent(timestamp):
 
 
 def write_latest_data():
-    info = Info(
-        pv = omega.get_pv(),
-        sv = omega.get_setpoint(),
-        pid_running = omega.is_running(),
-        hltToMash = str116.get_relay(settings.relays['hltToMash']),
-        hlt = str116.get_relay(settings.relays['hlt']),
-        rimsToMash = str116.get_relay(settings.relays['rimsToMash']),
-        pump = str116.get_relay(settings.relays['pump']),
-        timestamp = time.time(),
-    )
-    db.begin()
-    try:
-        info.save()
-    except ErrorSavingData:
-        db.rollback()
-    db.commit()
+    # info = Info(
+    #     pv = omega.get_pv(),
+    #     sv = omega.get_setpoint(),
+    #     pid_running = omega.is_running(),
+    #     hltToMash = str116.get_relay(settings.relays['hltToMash']),
+    #     hlt = str116.get_relay(settings.relays['hlt']),
+    #     rimsToMash = str116.get_relay(settings.relays['rimsToMash']),
+    #     pump = str116.get_relay(settings.relays['pump']),
+    #     timestamp = time.time(),
+    # )
+    db.execute("""
+        INSERT INTO info (pv, sv, pid_running, hltToMash, hlt, rimsToMash, pump, timestamp)
+        VALUES (
+            %s, %s, %s, %s, %s, %s, %s, %s
+        );
+    """ % (omega.get_pv(), omega.get_setpoint(), omega.is_running(),
+           str116.get_relay(settings.relays['hltToMash']),
+           str116.get_relay(settings.relays['hlt']),
+           str116.get_relay(settings.relays['rimsToMash']),
+           str116.get_relay(settings.relays['pump']), time.time()))
 
-def check_for_requests():
-    try:
-        request = Request.select(Request, fn.MAX(Request.timestamp)).get()
-        if recent(request.timestamp):
-            # Execute request
-            execute(request.method, request.args)
-    except Info.DoesNotExist:
-        return False
+# def check_for_requests():
+#     try:
+#         request = Request.select(Request, fn.MAX(Request.timestamp)).get()
+#         if recent(request.timestamp):
+#             # Execute request
+#             execute(request.method, request.args)
+#     except Info.DoesNotExist:
+#         return False
 
 
 def parse_args(args):

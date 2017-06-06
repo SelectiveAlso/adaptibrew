@@ -1,18 +1,15 @@
 #!/usr/bin/env python
 import exchange
-from exchange import Info
-from exchange import Request
 import time
 
 db = exchange.connect()
 
-if not Info.table_exists():
-    db.create_tables([Info])
+exchange.create_info_table()
+exchange.create_request_table()
 
-if not Request.table_exists():
-    db.create_tables([Request])
+exchange.write_latest_data()
 
-while True:
-    exchange.write_latest_data()
-    exchange.check_for_requests()
-    time.sleep(0.5)
+# while True:
+#     exchange.write_latest_data()
+#     exchange.check_for_requests()
+#     time.sleep(0.5)
