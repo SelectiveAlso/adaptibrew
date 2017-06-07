@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 from peewee import *
 import os
-from os.path import expanduser
 import omegacn7500
 import settings
 import str116
 import time
 
-db_dir = expanduser("~/.brewer/db/")
+db_dir = os.path.expanduser("~/.brewer/db/")
 db_file = "exchange.db"
 db = SqliteDatabase(db_dir + db_file)
 omega = omegacn7500.OmegaCN7500(settings.port, settings.rimsAddress)
@@ -43,7 +42,7 @@ def connect():
     return db
 
 def create_brewer_dir():
-    brewer_dir = expanduser("~") + "/.brewer/"
+    brewer_dir = os.path.expanduser("~") + "/.brewer/"
     if not os.path.exists(brewer_dir):
         os.makedirs(brewer_dir)
 
