@@ -34,6 +34,24 @@ class Request(Model):
     class Meta:
         database = db
 
+class Setting(Model):
+    port = CharField()
+    rimsAddress = IntegerField()
+    switchAddress = IntegerField()
+    baudRate = DecimalField()
+    timeout = DecimalField()
+    MA0 = CharField()
+    MA1 = CharField()
+    MAE = CharField()
+    CN = CharField()
+    hltToMash = IntegerField()
+    hlt = IntegerField()
+    rimsToMash = IntegerField()
+    pump = IntegerField()
+    DEBUG = BooleanField()
+
+    class Meta:
+        database = db
 
 def connect():
     create_brewer_dir()
@@ -62,6 +80,25 @@ def recent(timestamp):
         return True
     else:
         return False
+
+def write_settings():
+    settings_record = Setting(
+        port = str(settings.port),
+        rimsAddress = int(settings.rimsAddress),
+        switchAddress = int(settings.switchAddress),
+        baudRate = float(settings.baudRate),
+        timeout = float(settings.timeout),
+        MA0 = str(settings.MA0),
+        MA1 = str(settings.MA1),
+        MAE = str(settings.MAE),
+        CN = str(settings.CN),
+        hltToMash = int(settings.relays['hltToMash']),
+        hlt = int(settings.relays['hlt']),
+        rimsToMash = int(settings.relays['rimsToMash']),
+        pump = int(settings.relays['pump']),
+        DEBUG = settings.DEBUG
+    )
+    settings_record.save()
 
 
 def write_latest_data():
