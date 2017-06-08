@@ -91,35 +91,35 @@ def write_settings():
         webhook = ""
 
     settings_record = Setting(
-        port = str(settings.port),
-        rimsAddress = int(settings.rimsAddress),
-        switchAddress = int(settings.switchAddress),
-        baudRate = float(settings.baudRate),
-        timeout = float(settings.timeout),
-        MA0 = str(settings.MA0),
-        MA1 = str(settings.MA1),
-        MAE = str(settings.MAE),
-        CN = str(settings.CN),
-        hltToMash = int(settings.relays['hltToMash']),
-        hlt = int(settings.relays['hlt']),
-        rimsToMash = int(settings.relays['rimsToMash']),
-        pump = int(settings.relays['pump']),
-        webhook_url = webhook,
-        DEBUG = settings.DEBUG
+        port=str(settings.port),
+        rimsAddress=int(settings.rimsAddress),
+        switchAddress=int(settings.switchAddress),
+        baudRate=float(settings.baudRate),
+        timeout=float(settings.timeout),
+        MA0=str(settings.MA0),
+        MA1=str(settings.MA1),
+        MAE=str(settings.MAE),
+        CN=str(settings.CN),
+        hltToMash=int(settings.relays['hltToMash']),
+        hlt=int(settings.relays['hlt']),
+        rimsToMash=int(settings.relays['rimsToMash']),
+        pump=int(settings.relays['pump']),
+        webhook_url=webhook,
+        DEBUG=settings.DEBUG
     )
     settings_record.save()
 
 
 def write_latest_data():
     info = Info(
-        pv = omega.get_pv(),
-        sv = omega.get_setpoint(),
-        pid_running = omega.is_running(),
-        hltToMash = str116.get_relay(settings.relays['hltToMash']),
-        hlt = str116.get_relay(settings.relays['hlt']),
-        rimsToMash = str116.get_relay(settings.relays['rimsToMash']),
-        pump = str116.get_relay(settings.relays['pump']),
-        timestamp = time.time(),
+        pv=omega.get_pv(),
+        sv=omega.get_setpoint(),
+        pid_running=omega.is_running(),
+        hltToMash=str116.get_relay(settings.relays['hltToMash']),
+        hlt=str116.get_relay(settings.relays['hlt']),
+        rimsToMash=str116.get_relay(settings.relays['rimsToMash']),
+        pump=str116.get_relay(settings.relays['pump']),
+        timestamp=time.time(),
     )
     db.begin()
     try:
