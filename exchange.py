@@ -44,6 +44,20 @@ class Setting(Model):
     class Meta:
         database = db
 
+class Recipe(Model):
+    name = CharField()
+    water = DecimalField()
+    grain = DecimalField()
+    grain_temp = DecimalField()
+    desired_mash_temp = DecimalField()
+    mash_temp = DecimalField()
+    mash_time = DecimalField()
+    mashout_temp = DecimalField()
+
+    class Meta:
+        database = db
+
+# Methods
 def connect():
     create_brewer_dir()
     create_db_dir()

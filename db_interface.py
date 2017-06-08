@@ -3,6 +3,7 @@ import exchange
 from exchange import Info
 from exchange import Setting
 from exchange import Request
+from exchange import Recipe
 import time
 import settings
 
@@ -16,6 +17,9 @@ if not Setting.table_exists():
 
 if not Request.table_exists():
     db.create_tables([Request])
+
+if not Recipe.table_exists():
+    db.create_tables([Recipe])
 
 exchange.write_settings()
 

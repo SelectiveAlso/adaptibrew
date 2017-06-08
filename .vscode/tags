@@ -4,22 +4,17 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-CN	../exchange.py	/^    CN = CharField()$/;"	kind:variable	line:46
 CN	../settings.py	/^CN = '02'$/;"	kind:variable	line:25
-DEBUG	../exchange.py	/^    DEBUG = BooleanField()$/;"	kind:variable	line:52
 DEBUG	../settings.py	/^DEBUG = False$/;"	kind:variable	line:35
 Info	../db_interface.py	/^from exchange import Info$/;"	kind:namespace	line:3
 Info	../exchange.py	/^class Info(Model):$/;"	kind:class	line:16
 Info	../get_db_test.py	/^from exchange import Info$/;"	kind:namespace	line:2
-MA0	../exchange.py	/^    MA0 = CharField()$/;"	kind:variable	line:43
 MA0	../settings.py	/^MA0 = '55'$/;"	kind:variable	line:16
-MA1	../exchange.py	/^    MA1 = CharField()$/;"	kind:variable	line:44
 MA1	../settings.py	/^MA1 = 'AA'$/;"	kind:variable	line:19
-MAE	../exchange.py	/^    MAE = CharField()$/;"	kind:variable	line:45
 MAE	../settings.py	/^MAE = '77'$/;"	kind:variable	line:22
 Meta	../exchange.py	/^    class Meta:$/;"	kind:class	line:26
 Meta	../exchange.py	/^    class Meta:$/;"	kind:class	line:34
-Meta	../exchange.py	/^    class Meta:$/;"	kind:class	line:54
+Meta	../exchange.py	/^    class Meta:$/;"	kind:class	line:44
 NEW_TEMPERATURE	../testcn7500.py	/^NEW_TEMPERATURE = 95$/;"	kind:variable	line:11
 Request	../db_interface.py	/^from exchange import Request$/;"	kind:namespace	line:5
 Request	../exchange.py	/^class Request(Model):$/;"	kind:class	line:29
@@ -29,7 +24,6 @@ _get_checksum	../str116.py	/^def _get_checksum(data):$/;"	kind:function	line:43
 _write_message	../str116.py	/^def _write_message(data):$/;"	kind:function	line:7
 _write_message_with_response	../str116.py	/^def _write_message_with_response(data):$/;"	kind:function	line:22
 args	../exchange.py	/^    args = CharField()$/;"	kind:variable	line:31
-baudRate	../exchange.py	/^    baudRate = DecimalField()$/;"	kind:variable	line:41
 baudRate	../settings.py	/^baudRate = 19200$/;"	kind:variable	line:11
 benchmark.py	../benchmark.py	1;"	kind:file	line:1
 binascii	../setrelayaddress.py	/^import binascii$/;"	kind:namespace	line:4
@@ -41,31 +35,31 @@ bytestring	../close_all.py	/^bytestring = "55AA081702000F003077"$/;"	kind:variab
 bytestring	../rtutest.py	/^bytestring = "55AA0817020008012A77"$/;"	kind:variable	line:7
 bytestring	../setbaudrate.py	/^bytestring = "55AA083302AA55064277" #set baudrate to 19200$/;"	kind:variable	line:7
 calc_strike_temp	../brewcalculators.py	/^def calc_strike_temp(WaterVolInQuarts, GrainMassInPounds, GrainTemp, MashTemp):$/;"	kind:function	line:4
-check_for_requests	../exchange.py	/^def check_for_requests():$/;"	kind:function	line:132
+check_for_requests	../exchange.py	/^def check_for_requests():$/;"	kind:function	line:112
 choice	../brew_control.py	/^    choice = input("Select a valve from the choices above: ")$/;"	kind:variable	line:70
 click	../poweron.py	/^import click$/;"	kind:namespace	line:12
 close_all.py	../close_all.py	1;"	kind:file	line:1
-connect	../exchange.py	/^def connect():$/;"	kind:function	line:57
-create_brewer_dir	../exchange.py	/^def create_brewer_dir():$/;"	kind:function	line:63
-create_db_dir	../exchange.py	/^def create_db_dir():$/;"	kind:function	line:68
+connect	../exchange.py	/^def connect():$/;"	kind:function	line:47
+create_brewer_dir	../exchange.py	/^def create_brewer_dir():$/;"	kind:function	line:53
+create_db_dir	../exchange.py	/^def create_db_dir():$/;"	kind:function	line:58
 data	../setrelayaddress.py	/^            data = usart.read(size)$/;"	kind:variable	line:16
 data	../setrelayaddress.py	/^data = "55AA08060100024D5E77" #Sets all devices on the bus to address 2$/;"	kind:variable	line:6
 database	../exchange.py	/^        database = db$/;"	kind:variable	line:27
 database	../exchange.py	/^        database = db$/;"	kind:variable	line:35
-database	../exchange.py	/^        database = db$/;"	kind:variable	line:55
+database	../exchange.py	/^        database = db$/;"	kind:variable	line:45
 db	../db_interface.py	/^db = exchange.connect()$/;"	kind:variable	line:9
 db	../exchange.py	/^db = SqliteDatabase(db_dir + db_file)$/;"	kind:variable	line:11
 db	../get_db_test.py	/^db = exchange.connect()$/;"	kind:variable	line:4
 db_dir	../exchange.py	/^db_dir = os.path.expanduser("~\/.brewer\/db\/")$/;"	kind:variable	line:9
 db_file	../exchange.py	/^db_file = "exchange.db"$/;"	kind:variable	line:10
 db_interface.py	../db_interface.py	1;"	kind:file	line:1
-delete_db	../exchange.py	/^def delete_db():$/;"	kind:function	line:72
+delete_db	../exchange.py	/^def delete_db():$/;"	kind:function	line:62
 detect_stage	../brew_control.py	/^def detect_stage():$/;"	kind:function	line:144
 exchange	../benchmark.py	/^import exchange$/;"	kind:namespace	line:1
 exchange	../db_interface.py	/^import exchange$/;"	kind:namespace	line:2
 exchange	../get_db_test.py	/^import exchange$/;"	kind:namespace	line:1
 exchange.py	../exchange.py	1;"	kind:file	line:1
-execute	../exchange.py	/^def execute(request, args=""):$/;"	kind:function	line:145
+execute	../exchange.py	/^def execute(request, args=""):$/;"	kind:function	line:125
 get_data_for_sqlite	../benchmark.py	/^    print(timeit.timeit("get_data_for_sqlite()", setup="from __main__ import get_data_for_sqlite", number=100))$/;"	kind:namespace	line:30
 get_data_for_sqlite	../benchmark.py	/^def get_data_for_sqlite():$/;"	kind:function	line:17
 get_db_test.py	../get_db_test.py	1;"	kind:file	line:1
@@ -79,9 +73,9 @@ get_relays_status	../str116.py	/^def get_relays_status():$/;"	kind:function	line
 get_strike_temp.py	../get_strike_temp.py	1;"	kind:file	line:1
 get_sv.py	../get_sv.py	1;"	kind:file	line:1
 hlt	../exchange.py	/^    hlt = BooleanField()$/;"	kind:variable	line:21
-hlt	../exchange.py	/^    hlt = IntegerField()$/;"	kind:variable	line:48
+hlt	../exchange.py	/^    hlt = IntegerField()$/;"	kind:variable	line:39
 hltToMash	../exchange.py	/^    hltToMash = BooleanField()$/;"	kind:variable	line:20
-hltToMash	../exchange.py	/^    hltToMash = IntegerField()$/;"	kind:variable	line:47
+hltToMash	../exchange.py	/^    hltToMash = IntegerField()$/;"	kind:variable	line:38
 info	../get_db_test.py	/^    info = Info.get()$/;"	kind:variable	line:7
 instr	../brew_control.py	/^instr = omegacn7500.OmegaCN7500(settings.port,settings.rimsAddress)$/;"	kind:variable	line:9
 instr	../get_pid_status.py	/^instr = omegacn7500.OmegaCN7500(settings.port,settings.rimsAddress)$/;"	kind:variable	line:6
@@ -123,25 +117,23 @@ omegacn7500	../set_pid_on.py	/^import omegacn7500$/;"	kind:namespace	line:2
 omegacn7500	../set_sv.py	/^import omegacn7500$/;"	kind:namespace	line:2
 omegacn7500	../testomega.py	/^import omegacn7500$/;"	kind:namespace	line:2
 os	../exchange.py	/^import os$/;"	kind:namespace	line:3
-parse_args	../exchange.py	/^def parse_args(args):$/;"	kind:function	line:142
+parse_args	../exchange.py	/^def parse_args(args):$/;"	kind:function	line:122
 pid_running	../exchange.py	/^    pid_running = BooleanField()$/;"	kind:variable	line:19
-port	../exchange.py	/^    port = CharField()$/;"	kind:variable	line:38
 port	../setbaudrate.py	/^port = "\/dev\/ttyAMA0"$/;"	kind:variable	line:5
 port	../settings.py	/^port = "\/dev\/ttyAMA0"$/;"	kind:variable	line:4
 poweron.py	../poweron.py	1;"	kind:file	line:1
 print_settings.py	../print_settings.py	1;"	kind:file	line:1
 pump	../exchange.py	/^    pump = BooleanField()$/;"	kind:variable	line:23
-pump	../exchange.py	/^    pump = IntegerField()$/;"	kind:variable	line:50
+pump	../exchange.py	/^    pump = IntegerField()$/;"	kind:variable	line:41
 pv	../exchange.py	/^    pv = DecimalField()$/;"	kind:variable	line:17
 python_tester.py	../python_tester.py	1;"	kind:file	line:1
 read_request_from_db	../benchmark.py	/^def read_request_from_db():$/;"	kind:function	line:13
-recent	../exchange.py	/^def recent(timestamp):$/;"	kind:function	line:79
+recent	../exchange.py	/^def recent(timestamp):$/;"	kind:function	line:69
 relay_test.py	../relay_test.py	1;"	kind:file	line:1
 relays	../settings.py	/^relays = {$/;"	kind:variable	line:29
-rimsAddress	../exchange.py	/^    rimsAddress = IntegerField()$/;"	kind:variable	line:39
 rimsAddress	../settings.py	/^rimsAddress = 1$/;"	kind:variable	line:7
 rimsToMash	../exchange.py	/^    rimsToMash = BooleanField()$/;"	kind:variable	line:22
-rimsToMash	../exchange.py	/^    rimsToMash = IntegerField()$/;"	kind:variable	line:49
+rimsToMash	../exchange.py	/^    rimsToMash = IntegerField()$/;"	kind:variable	line:40
 rtutest.py	../rtutest.py	1;"	kind:file	line:1
 select_stage	../brew_control.py	/^def select_stage():$/;"	kind:function	line:124
 serial	../close_all.py	/^import serial$/;"	kind:namespace	line:2
@@ -203,7 +195,6 @@ str116	../set_pump_on.py	/^import str116$/;"	kind:namespace	line:2
 str116	../set_relay.py	/^import str116$/;"	kind:namespace	line:1
 str116.py	../str116.py	1;"	kind:file	line:1
 sv	../exchange.py	/^    sv = DecimalField()$/;"	kind:variable	line:18
-switchAddress	../exchange.py	/^    switchAddress = IntegerField()$/;"	kind:variable	line:40
 switchAddress	../settings.py	/^switchAddress = 2$/;"	kind:variable	line:9
 sys	../benchmark.py	/^import sys$/;"	kind:namespace	line:4
 sys	../brew_control.py	/^import sys$/;"	kind:namespace	line:6
@@ -227,7 +218,6 @@ time	../setbaudrate.py	/^import time$/;"	kind:namespace	line:3
 time	../setrelayaddress.py	/^import time$/;"	kind:namespace	line:3
 time	../str116.py	/^import time$/;"	kind:namespace	line:4
 timeit	../benchmark.py	/^    import timeit$/;"	kind:namespace	line:29
-timeout	../exchange.py	/^    timeout = DecimalField()$/;"	kind:variable	line:42
 timeout	../settings.py	/^timeout = 2$/;"	kind:variable	line:13
 timestamp	../exchange.py	/^    timestamp = DecimalField()$/;"	kind:variable	line:24
 timestamp	../exchange.py	/^    timestamp = DecimalField()$/;"	kind:variable	line:32
@@ -239,7 +229,7 @@ usart	../close_all.py	/^usart = serial.Serial (settings.port,settings.baudRate)$
 usart	../rtutest.py	/^usart = serial.Serial (settings.port,settings.baudRate)$/;"	kind:variable	line:6
 usart	../setbaudrate.py	/^usart = serial.Serial (port,9600)$/;"	kind:variable	line:6
 usart	../setrelayaddress.py	/^usart = serial.Serial ("\/dev\/ttyAMA0",19200)$/;"	kind:variable	line:7
-webhook_url	../exchange.py	/^    webhook_url = CharField()$/;"	kind:variable	line:51
+webhook_url	../exchange.py	/^    webhook_url = CharField()$/;"	kind:variable	line:42
 write_data_to_db	../benchmark.py	/^def write_data_to_db():$/;"	kind:function	line:10
-write_latest_data	../exchange.py	/^def write_latest_data():$/;"	kind:function	line:114
-write_settings	../exchange.py	/^def write_settings():$/;"	kind:function	line:85
+write_latest_data	../exchange.py	/^def write_latest_data():$/;"	kind:function	line:94
+write_settings	../exchange.py	/^def write_settings():$/;"	kind:function	line:75
