@@ -83,11 +83,12 @@ def recent(timestamp):
         return False
 
 def write_settings():
-
     try:
         if Setting.get().webhook_url:
             webhook = Setting.select().order_by(Setting.id.desc()).get().webhook_url
     except Setting.DoesNotExist:
+        webhook = ""
+    else:
         webhook = ""
 
     settings_record = Setting(
