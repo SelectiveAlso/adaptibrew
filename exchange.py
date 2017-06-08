@@ -35,21 +35,11 @@ class Request(Model):
         database = db
 
 class Setting(Model):
-    port = CharField()
-    rimsAddress = IntegerField()
-    switchAddress = IntegerField()
-    baudRate = DecimalField()
-    timeout = DecimalField()
-    MA0 = CharField()
-    MA1 = CharField()
-    MAE = CharField()
-    CN = CharField()
     hltToMash = IntegerField()
     hlt = IntegerField()
     rimsToMash = IntegerField()
     pump = IntegerField()
     webhook_url = CharField()
-    DEBUG = BooleanField()
 
     class Meta:
         database = db
@@ -92,21 +82,11 @@ def write_settings():
         webhook = ""
 
     settings_record = Setting(
-        port=str(settings.port),
-        rimsAddress=int(settings.rimsAddress),
-        switchAddress=int(settings.switchAddress),
-        baudRate=float(settings.baudRate),
-        timeout=float(settings.timeout),
-        MA0=str(settings.MA0),
-        MA1=str(settings.MA1),
-        MAE=str(settings.MAE),
-        CN=str(settings.CN),
         hltToMash=int(settings.relays['hltToMash']),
         hlt=int(settings.relays['hlt']),
         rimsToMash=int(settings.relays['rimsToMash']),
         pump=int(settings.relays['pump']),
         webhook_url=webhook,
-        DEBUG=settings.DEBUG
     )
     settings_record.save()
 
