@@ -31,7 +31,7 @@ def _write_message_with_response(data):
             size = usart.inWaiting()
             if size:
                 data = usart.read(size)
-                print binascii.hexlify(data)
+                # print binascii.hexlify(data)
             else:
                 print('no data')
         else:

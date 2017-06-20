@@ -15,7 +15,10 @@ MAE	../settings.py	/^MAE = '77'$/;"	kind:variable	line:22
 Meta	../exchange.py	/^    class Meta:$/;"	kind:class	line:26
 Meta	../exchange.py	/^    class Meta:$/;"	kind:class	line:34
 Meta	../exchange.py	/^    class Meta:$/;"	kind:class	line:44
+Meta	../exchange.py	/^    class Meta:$/;"	kind:class	line:57
 NEW_TEMPERATURE	../testcn7500.py	/^NEW_TEMPERATURE = 95$/;"	kind:variable	line:11
+Recipe	../db_interface.py	/^from exchange import Recipe$/;"	kind:namespace	line:6
+Recipe	../exchange.py	/^class Recipe(Model):$/;"	kind:class	line:47
 Request	../db_interface.py	/^from exchange import Request$/;"	kind:namespace	line:5
 Request	../exchange.py	/^class Request(Model):$/;"	kind:class	line:29
 Setting	../db_interface.py	/^from exchange import Setting$/;"	kind:namespace	line:4
@@ -35,31 +38,33 @@ bytestring	../close_all.py	/^bytestring = "55AA081702000F003077"$/;"	kind:variab
 bytestring	../rtutest.py	/^bytestring = "55AA0817020008012A77"$/;"	kind:variable	line:7
 bytestring	../setbaudrate.py	/^bytestring = "55AA083302AA55064277" #set baudrate to 19200$/;"	kind:variable	line:7
 calc_strike_temp	../brewcalculators.py	/^def calc_strike_temp(WaterVolInQuarts, GrainMassInPounds, GrainTemp, MashTemp):$/;"	kind:function	line:4
-check_for_requests	../exchange.py	/^def check_for_requests():$/;"	kind:function	line:112
+check_for_requests	../exchange.py	/^def check_for_requests():$/;"	kind:function	line:126
 choice	../brew_control.py	/^    choice = input("Select a valve from the choices above: ")$/;"	kind:variable	line:70
 click	../poweron.py	/^import click$/;"	kind:namespace	line:12
 close_all.py	../close_all.py	1;"	kind:file	line:1
-connect	../exchange.py	/^def connect():$/;"	kind:function	line:47
-create_brewer_dir	../exchange.py	/^def create_brewer_dir():$/;"	kind:function	line:53
-create_db_dir	../exchange.py	/^def create_db_dir():$/;"	kind:function	line:58
+connect	../exchange.py	/^def connect():$/;"	kind:function	line:61
+create_brewer_dir	../exchange.py	/^def create_brewer_dir():$/;"	kind:function	line:67
+create_db_dir	../exchange.py	/^def create_db_dir():$/;"	kind:function	line:72
 data	../setrelayaddress.py	/^            data = usart.read(size)$/;"	kind:variable	line:16
 data	../setrelayaddress.py	/^data = "55AA08060100024D5E77" #Sets all devices on the bus to address 2$/;"	kind:variable	line:6
 database	../exchange.py	/^        database = db$/;"	kind:variable	line:27
 database	../exchange.py	/^        database = db$/;"	kind:variable	line:35
 database	../exchange.py	/^        database = db$/;"	kind:variable	line:45
-db	../db_interface.py	/^db = exchange.connect()$/;"	kind:variable	line:9
+database	../exchange.py	/^        database = db$/;"	kind:variable	line:58
+db	../db_interface.py	/^db = exchange.connect()$/;"	kind:variable	line:10
 db	../exchange.py	/^db = SqliteDatabase(db_dir + db_file)$/;"	kind:variable	line:11
 db	../get_db_test.py	/^db = exchange.connect()$/;"	kind:variable	line:4
 db_dir	../exchange.py	/^db_dir = os.path.expanduser("~\/.brewer\/db\/")$/;"	kind:variable	line:9
 db_file	../exchange.py	/^db_file = "exchange.db"$/;"	kind:variable	line:10
 db_interface.py	../db_interface.py	1;"	kind:file	line:1
-delete_db	../exchange.py	/^def delete_db():$/;"	kind:function	line:62
+delete_db	../exchange.py	/^def delete_db():$/;"	kind:function	line:76
+desired_mash_temp	../exchange.py	/^    desired_mash_temp = DecimalField()$/;"	kind:variable	line:52
 detect_stage	../brew_control.py	/^def detect_stage():$/;"	kind:function	line:144
 exchange	../benchmark.py	/^import exchange$/;"	kind:namespace	line:1
 exchange	../db_interface.py	/^import exchange$/;"	kind:namespace	line:2
 exchange	../get_db_test.py	/^import exchange$/;"	kind:namespace	line:1
 exchange.py	../exchange.py	1;"	kind:file	line:1
-execute	../exchange.py	/^def execute(request, args=""):$/;"	kind:function	line:125
+execute	../exchange.py	/^def execute(request, args=""):$/;"	kind:function	line:139
 get_data_for_sqlite	../benchmark.py	/^    print(timeit.timeit("get_data_for_sqlite()", setup="from __main__ import get_data_for_sqlite", number=100))$/;"	kind:namespace	line:30
 get_data_for_sqlite	../benchmark.py	/^def get_data_for_sqlite():$/;"	kind:function	line:17
 get_db_test.py	../get_db_test.py	1;"	kind:file	line:1
@@ -72,6 +77,8 @@ get_relay_status_test.py	../get_relay_status_test.py	1;"	kind:file	line:1
 get_relays_status	../str116.py	/^def get_relays_status():$/;"	kind:function	line:78
 get_strike_temp.py	../get_strike_temp.py	1;"	kind:file	line:1
 get_sv.py	../get_sv.py	1;"	kind:file	line:1
+grain	../exchange.py	/^    grain = DecimalField()$/;"	kind:variable	line:50
+grain_temp	../exchange.py	/^    grain_temp = DecimalField()$/;"	kind:variable	line:51
 hlt	../exchange.py	/^    hlt = BooleanField()$/;"	kind:variable	line:21
 hlt	../exchange.py	/^    hlt = IntegerField()$/;"	kind:variable	line:39
 hltToMash	../exchange.py	/^    hltToMash = BooleanField()$/;"	kind:variable	line:20
@@ -92,6 +99,9 @@ is_pid_running.py	../is_pid_running.py	1;"	kind:file	line:1
 list_of_settings	../print_settings.py	/^list_of_settings = [x for x in dir(settings) if not "__" in x]$/;"	kind:variable	line:7
 main	../get_strike_temp.py	/^def main():$/;"	kind:function	line:4
 main_loop	../brew_control.py	/^def main_loop():$/;"	kind:function	line:14
+mash_temp	../exchange.py	/^    mash_temp = DecimalField()$/;"	kind:variable	line:53
+mash_time	../exchange.py	/^    mash_time = DecimalField()$/;"	kind:variable	line:54
+mashout_temp	../exchange.py	/^    mashout_temp = DecimalField()$/;"	kind:variable	line:55
 master_settings_dict	../print_settings.py	/^master_settings_dict = {}$/;"	kind:variable	line:3
 message_bytes	../close_all.py	/^message_bytes = bytestring.decode("hex")$/;"	kind:variable	line:7
 message_bytes	../rtutest.py	/^message_bytes = "55AA0817020008002977".decode("hex")$/;"	kind:variable	line:11
@@ -102,6 +112,7 @@ method	../exchange.py	/^    method = CharField()$/;"	kind:variable	line:30
 minimalmodbus	../get_pid_status.py	/^import minimalmodbus$/;"	kind:namespace	line:2
 minimalmodbus	../testcn7500.py	/^import minimalmodbus$/;"	kind:namespace	line:2
 n	../relay_test.py	/^n=0$/;"	kind:variable	line:7
+name	../exchange.py	/^    name = CharField()$/;"	kind:variable	line:48
 omega	../benchmark.py	/^omega = omegacn7500.OmegaCN7500(settings.port, settings.rimsAddress)$/;"	kind:variable	line:8
 omega	../exchange.py	/^omega = omegacn7500.OmegaCN7500(settings.port, settings.rimsAddress)$/;"	kind:variable	line:12
 omegacn7500	../benchmark.py	/^import omegacn7500$/;"	kind:namespace	line:2
@@ -117,7 +128,7 @@ omegacn7500	../set_pid_on.py	/^import omegacn7500$/;"	kind:namespace	line:2
 omegacn7500	../set_sv.py	/^import omegacn7500$/;"	kind:namespace	line:2
 omegacn7500	../testomega.py	/^import omegacn7500$/;"	kind:namespace	line:2
 os	../exchange.py	/^import os$/;"	kind:namespace	line:3
-parse_args	../exchange.py	/^def parse_args(args):$/;"	kind:function	line:122
+parse_args	../exchange.py	/^def parse_args(args):$/;"	kind:function	line:136
 pid_running	../exchange.py	/^    pid_running = BooleanField()$/;"	kind:variable	line:19
 port	../setbaudrate.py	/^port = "\/dev\/ttyAMA0"$/;"	kind:variable	line:5
 port	../settings.py	/^port = "\/dev\/ttyAMA0"$/;"	kind:variable	line:4
@@ -128,7 +139,7 @@ pump	../exchange.py	/^    pump = IntegerField()$/;"	kind:variable	line:41
 pv	../exchange.py	/^    pv = DecimalField()$/;"	kind:variable	line:17
 python_tester.py	../python_tester.py	1;"	kind:file	line:1
 read_request_from_db	../benchmark.py	/^def read_request_from_db():$/;"	kind:function	line:13
-recent	../exchange.py	/^def recent(timestamp):$/;"	kind:function	line:69
+recent	../exchange.py	/^def recent(timestamp):$/;"	kind:function	line:83
 relay_test.py	../relay_test.py	1;"	kind:file	line:1
 relays	../settings.py	/^relays = {$/;"	kind:variable	line:29
 rimsAddress	../settings.py	/^rimsAddress = 1$/;"	kind:variable	line:7
@@ -161,7 +172,7 @@ setrelayaddress.py	../setrelayaddress.py	1;"	kind:file	line:1
 settings	../benchmark.py	/^import settings$/;"	kind:namespace	line:5
 settings	../brew_control.py	/^import settings$/;"	kind:namespace	line:5
 settings	../close_all.py	/^import settings$/;"	kind:namespace	line:3
-settings	../db_interface.py	/^import settings$/;"	kind:namespace	line:7
+settings	../db_interface.py	/^import settings$/;"	kind:namespace	line:8
 settings	../exchange.py	/^import settings$/;"	kind:namespace	line:5
 settings	../get_pid_status.py	/^import settings$/;"	kind:namespace	line:4
 settings	../get_pv.py	/^import settings$/;"	kind:namespace	line:3
@@ -208,7 +219,7 @@ testcn7500.py	../testcn7500.py	1;"	kind:file	line:1
 testomega.py	../testomega.py	1;"	kind:file	line:1
 time	../benchmark.py	/^import time$/;"	kind:namespace	line:3
 time	../brew_control.py	/^    import time$/;"	kind:namespace	line:157
-time	../db_interface.py	/^import time$/;"	kind:namespace	line:6
+time	../db_interface.py	/^import time$/;"	kind:namespace	line:7
 time	../exchange.py	/^import time$/;"	kind:namespace	line:7
 time	../get_pv_loop.py	/^import time$/;"	kind:namespace	line:4
 time	../get_sv.py	/^import time$/;"	kind:namespace	line:4
@@ -229,7 +240,8 @@ usart	../close_all.py	/^usart = serial.Serial (settings.port,settings.baudRate)$
 usart	../rtutest.py	/^usart = serial.Serial (settings.port,settings.baudRate)$/;"	kind:variable	line:6
 usart	../setbaudrate.py	/^usart = serial.Serial (port,9600)$/;"	kind:variable	line:6
 usart	../setrelayaddress.py	/^usart = serial.Serial ("\/dev\/ttyAMA0",19200)$/;"	kind:variable	line:7
+water	../exchange.py	/^    water = DecimalField()$/;"	kind:variable	line:49
 webhook_url	../exchange.py	/^    webhook_url = CharField()$/;"	kind:variable	line:42
 write_data_to_db	../benchmark.py	/^def write_data_to_db():$/;"	kind:function	line:10
-write_latest_data	../exchange.py	/^def write_latest_data():$/;"	kind:function	line:94
-write_settings	../exchange.py	/^def write_settings():$/;"	kind:function	line:75
+write_latest_data	../exchange.py	/^def write_latest_data():$/;"	kind:function	line:108
+write_settings	../exchange.py	/^def write_settings():$/;"	kind:function	line:89
