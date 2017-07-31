@@ -23,6 +23,8 @@ if not Recipe.table_exists():
 
 exchange.write_settings()
 
+print "Adaptibrew running..."
+
 while True:
     exchange.write_latest_data()
     exchange.check_for_requests()
