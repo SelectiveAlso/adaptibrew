@@ -6,6 +6,7 @@ from exchange import Request
 from exchange import Recipe
 import time
 import settings
+import version
 
 db = exchange.connect()
 
@@ -23,7 +24,7 @@ if not Recipe.table_exists():
 
 exchange.write_settings()
 
-print "Adaptibrew running..."
+print "Adaptibrew " + version.current + " running..."
 
 while True:
     exchange.write_latest_data()

@@ -45,13 +45,14 @@ close_all.py	../close_all.py	1;"	kind:file	line:1
 connect	../exchange.py	/^def connect():$/;"	kind:function	line:61
 create_brewer_dir	../exchange.py	/^def create_brewer_dir():$/;"	kind:function	line:67
 create_db_dir	../exchange.py	/^def create_db_dir():$/;"	kind:function	line:72
+current	../version.py	/^current = "0.5"$/;"	kind:variable	line:2
 data	../setrelayaddress.py	/^            data = usart.read(size)$/;"	kind:variable	line:16
 data	../setrelayaddress.py	/^data = "55AA08060100024D5E77" #Sets all devices on the bus to address 2$/;"	kind:variable	line:6
 database	../exchange.py	/^        database = db$/;"	kind:variable	line:27
 database	../exchange.py	/^        database = db$/;"	kind:variable	line:35
 database	../exchange.py	/^        database = db$/;"	kind:variable	line:45
 database	../exchange.py	/^        database = db$/;"	kind:variable	line:58
-db	../db_interface.py	/^db = exchange.connect()$/;"	kind:variable	line:10
+db	../db_interface.py	/^db = exchange.connect()$/;"	kind:variable	line:11
 db	../exchange.py	/^db = SqliteDatabase(db_dir + db_file)$/;"	kind:variable	line:11
 db	../get_db_test.py	/^db = exchange.connect()$/;"	kind:variable	line:4
 db_dir	../exchange.py	/^db_dir = os.path.expanduser("~\/.brewer\/db\/")$/;"	kind:variable	line:9
@@ -240,6 +241,8 @@ usart	../close_all.py	/^usart = serial.Serial (settings.port,settings.baudRate)$
 usart	../rtutest.py	/^usart = serial.Serial (settings.port,settings.baudRate)$/;"	kind:variable	line:6
 usart	../setbaudrate.py	/^usart = serial.Serial (port,9600)$/;"	kind:variable	line:6
 usart	../setrelayaddress.py	/^usart = serial.Serial ("\/dev\/ttyAMA0",19200)$/;"	kind:variable	line:7
+version	../db_interface.py	/^import version$/;"	kind:namespace	line:9
+version.py	../version.py	1;"	kind:file	line:1
 water	../exchange.py	/^    water = DecimalField()$/;"	kind:variable	line:49
 webhook_url	../exchange.py	/^    webhook_url = CharField()$/;"	kind:variable	line:42
 write_data_to_db	../benchmark.py	/^def write_data_to_db():$/;"	kind:function	line:10
