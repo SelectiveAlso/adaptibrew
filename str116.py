@@ -68,7 +68,6 @@ def get_relay(relaynumber):
     bytestring = settings.MA0 + settings.MA1 + str_to_checksum \
         + str(CS) + settings.MAE
     relaystatus = _write_message_with_response(bytestring)[6:-4]
-    # print relaystatus
     test = relaystatus[relaynumber*2:relaynumber*2+2]
     if int(test) > 0:
         return True
