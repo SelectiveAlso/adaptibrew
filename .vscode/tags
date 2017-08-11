@@ -23,9 +23,9 @@ Request	../db_interface.py	/^from exchange import Request$/;"	kind:namespace	lin
 Request	../exchange.py	/^class Request(Model):$/;"	kind:class	line:29
 Setting	../db_interface.py	/^from exchange import Setting$/;"	kind:namespace	line:4
 Setting	../exchange.py	/^class Setting(Model):$/;"	kind:class	line:37
-_get_checksum	../str116.py	/^def _get_checksum(data):$/;"	kind:function	line:43
-_write_message	../str116.py	/^def _write_message(data):$/;"	kind:function	line:7
-_write_message_with_response	../str116.py	/^def _write_message_with_response(data):$/;"	kind:function	line:22
+_get_checksum	../str116.py	/^def _get_checksum(data):$/;"	kind:function	line:44
+_write_message	../str116.py	/^def _write_message(data):$/;"	kind:function	line:8
+_write_message_with_response	../str116.py	/^def _write_message_with_response(data):$/;"	kind:function	line:23
 args	../exchange.py	/^    args = CharField()$/;"	kind:variable	line:31
 baudRate	../settings.py	/^baudRate = 19200$/;"	kind:variable	line:11
 benchmark.py	../benchmark.py	1;"	kind:file	line:1
@@ -58,6 +58,7 @@ db	../get_db_test.py	/^db = exchange.connect()$/;"	kind:variable	line:4
 db_dir	../exchange.py	/^db_dir = os.path.expanduser("~\/.brewer\/db\/")$/;"	kind:variable	line:9
 db_file	../exchange.py	/^db_file = "exchange.db"$/;"	kind:variable	line:10
 db_interface.py	../db_interface.py	1;"	kind:file	line:1
+debugger.py	../debugger.py	1;"	kind:file	line:1
 delete_db	../exchange.py	/^def delete_db():$/;"	kind:function	line:76
 desired_mash_temp	../exchange.py	/^    desired_mash_temp = DecimalField()$/;"	kind:variable	line:52
 detect_stage	../brew_control.py	/^def detect_stage():$/;"	kind:function	line:144
@@ -72,10 +73,11 @@ get_db_test.py	../get_db_test.py	1;"	kind:file	line:1
 get_pid_status.py	../get_pid_status.py	1;"	kind:file	line:1
 get_pv.py	../get_pv.py	1;"	kind:file	line:1
 get_pv_loop.py	../get_pv_loop.py	1;"	kind:file	line:1
-get_relay	../str116.py	/^def get_relay(relaynumber):$/;"	kind:function	line:64
+get_relay	../debugger.py	/^from str116 import get_relay$/;"	kind:namespace	line:1
+get_relay	../str116.py	/^def get_relay(relaynumber):$/;"	kind:function	line:65
 get_relay_status.py	../get_relay_status.py	1;"	kind:file	line:1
 get_relay_status_test.py	../get_relay_status_test.py	1;"	kind:file	line:1
-get_relays_status	../str116.py	/^def get_relays_status():$/;"	kind:function	line:78
+get_relays_status	../str116.py	/^def get_relays_status():$/;"	kind:function	line:88
 get_strike_temp.py	../get_strike_temp.py	1;"	kind:file	line:1
 get_sv.py	../get_sv.py	1;"	kind:file	line:1
 grain	../exchange.py	/^    grain = DecimalField()$/;"	kind:variable	line:50
@@ -129,6 +131,7 @@ omegacn7500	../set_pid_on.py	/^import omegacn7500$/;"	kind:namespace	line:2
 omegacn7500	../set_sv.py	/^import omegacn7500$/;"	kind:namespace	line:2
 omegacn7500	../testomega.py	/^import omegacn7500$/;"	kind:namespace	line:2
 os	../exchange.py	/^import os$/;"	kind:namespace	line:3
+os	../str116.py	/^import os$/;"	kind:namespace	line:6
 parse_args	../exchange.py	/^def parse_args(args):$/;"	kind:function	line:136
 pid_running	../exchange.py	/^    pid_running = BooleanField()$/;"	kind:variable	line:19
 port	../setbaudrate.py	/^port = "\/dev\/ttyAMA0"$/;"	kind:variable	line:5
@@ -154,7 +157,7 @@ serial	../setbaudrate.py	/^import serial$/;"	kind:namespace	line:2
 serial	../setrelayaddress.py	/^import serial$/;"	kind:namespace	line:2
 serial	../str116.py	/^import serial$/;"	kind:namespace	line:2
 set_RIMS_stage	../brew_control.py	/^def set_RIMS_stage():$/;"	kind:function	line:147
-set_baudrate	../str116.py	/^def set_baudrate():$/;"	kind:function	line:104
+set_baudrate	../str116.py	/^def set_baudrate():$/;"	kind:function	line:114
 set_boil_stage	../brew_control.py	/^def set_boil_stage():$/;"	kind:function	line:175
 set_pid_off	../poweron.py	/^import set_pid_off$/;"	kind:namespace	line:10
 set_pid_off.py	../set_pid_off.py	1;"	kind:file	line:1
@@ -163,7 +166,7 @@ set_pump_off	../brew_control.py	/^def set_pump_off():$/;"	kind:function	line:105
 set_pump_off.py	../set_pump_off.py	1;"	kind:file	line:1
 set_pump_on	../brew_control.py	/^def set_pump_on():$/;"	kind:function	line:100
 set_pump_on.py	../set_pump_on.py	1;"	kind:file	line:1
-set_relay	../str116.py	/^def set_relay(relaynumber, onoff):$/;"	kind:function	line:48
+set_relay	../str116.py	/^def set_relay(relaynumber, onoff):$/;"	kind:function	line:49
 set_relay.py	../set_relay.py	1;"	kind:file	line:1
 set_sparge_stage	../brew_control.py	/^def set_sparge_stage():$/;"	kind:function	line:153
 set_sv.py	../set_sv.py	1;"	kind:file	line:1

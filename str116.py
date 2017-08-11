@@ -3,6 +3,7 @@ import serial
 import settings
 import time
 import binascii
+import os
 
 def _write_message(data):
     try:
@@ -69,10 +70,20 @@ def get_relay(relaynumber):
         + str(CS) + settings.MAE
     relaystatus = _write_message_with_response(bytestring)[6:-4]
     test = relaystatus[relaynumber*2:relaynumber*2+2]
-    if int(test) > 0:
-        return True
-    else:
-        return False
+    try:
+        if int(test) > 0:
+            return True
+        else:
+            return False
+    except ValueError as ex:
+        with open(os.path.expanduser("~") + "/adaptibrew.log", "w+") as file:
+            file.write("---FAIL---" + "\n")
+            file.write("test variable = " + str(test) + "\n")
+            file.write("relaystatus variable = " + str(relaystatus) + "\n")
+            file.write("bytestring variable = " + str(bytestring) + "\n")
+            file.write("string_to_checksum variable = " + str_to_checksum + "\n")
+            file.write("Exception----" + "\n")
+            file.write(str(ex) + "\n")
 
 def get_relays_status():
     #command to get the status of all of the relays in an array.
